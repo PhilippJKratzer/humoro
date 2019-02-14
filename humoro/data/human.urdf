@@ -1,0 +1,1749 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 0.8 -->
+  <robot name="my_model">
+
+    <link name="base">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="baseRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="baseRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="baseRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_PelvisBody">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.14" length="0.132"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="baseTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="baseTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="baseTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="headRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="headRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="headRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_head">
+        <origin xyz="0 0.00075 0.02589" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.13"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lAnkleRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lAnkleRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lAnkleRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFoot">
+        <origin xyz="-0.00303 -0.04782 -0.06326" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.2 0.1488 0.063"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lElbowRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lElbowRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lElbowRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_rRadius">
+        <origin xyz="0.13503 0 0.00437" rpy="0 1.5708 0"/>
+        <geometry>
+          <cylinder radius="0.04" length="0.217"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lHipRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lHipRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lHipRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFemur">
+        <origin xyz="-0.00375 0 -0.25255" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0871" length="0.45"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lKneeRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lKneeRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lKneeRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lTibia">
+        <origin xyz="-0.00375 0 -0.20357" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0685" length="0.3498"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lShoulderRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lShoulderRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lShoulderRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_head">
+        <origin xyz="-0.00282 -3e-05 0.00437" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.05617"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+      <visual name="visual_0_lHumerus">
+        <origin xyz="0.15745 0 0.00437" rpy="0 1.5708 0"/>
+        <geometry>
+          <cylinder radius="0.045" length="0.2475"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lToeRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lToeRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lToeRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFoot">
+        <origin xyz="-0.00303 -0.02629 0.00418" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.05 0.1488 0.063"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="lWristRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lWristRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lWristRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lHand">
+        <origin xyz="0.08708 0 0.00437" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.07 0.1 0.025"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="linnerShoulderRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="linnerShoulderRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="linnerShoulderRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="neckRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="neckRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="neckRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_PelvisBody">
+        <origin xyz="0 0 0.04533" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.056" length="0.044"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="pelvisRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="pelvisRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="pelvisRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_PelvisBody">
+        <origin xyz="0 0 0.0951" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.14" length="0.198"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rAnkleRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rAnkleRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rAnkleRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFoot">
+        <origin xyz="0.00303 -0.04782 -0.06326" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.2 0.1488 0.063"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rElbowRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rElbowRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rElbowRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_rRadius">
+        <origin xyz="-0.1362 0 0.00437" rpy="0 1.5708 0"/>
+        <geometry>
+          <cylinder radius="0.04" length="0.217"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rHipRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rHipRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rHipRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFemur">
+        <origin xyz="0.00375 0 -0.25255" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0871" length="0.45"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rKneeRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rKneeRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rKneeRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lTibia">
+        <origin xyz="0.00375 0 -0.20357" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.0685" length="0.3498"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rShoulderRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rShoulderRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rShoulderRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_head">
+        <origin xyz="0.00165 -3e-05 0.00437" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.05617"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+      <visual name="visual_0_lHumerus">
+        <origin xyz="-0.15835 0 0.00437" rpy="0 1.5708 0"/>
+        <geometry>
+          <cylinder radius="0.045" length="0.2475"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rToeRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rToeRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rToeRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lFoot">
+        <origin xyz="0.00303 -0.02629 0.00418" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.05 0.1488 0.063"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rWristRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rWristRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rWristRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_lHand">
+        <origin xyz="-0.08825 0 0.00437" rpy="0 0 1.5708"/>
+        <geometry>
+          <box size="0.07 0.1 0.025"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="rinnerShoulderRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rinnerShoulderRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rinnerShoulderRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoRotX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoRotY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoRotZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+      <visual name="visual_0_PelvisBody">
+        <origin xyz="0 0 0.12507" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.14" length="0.264"/>
+        </geometry>
+	<material name="Grey">
+	  <color rgba=".9 .9 .9 1.0"/>
+	</material>
+      </visual>
+    </link>
+
+    <link name="headTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="headTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lAnkleTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lAnkleTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lAnkleTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lElbowTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lHipTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lKneeTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lShoulderTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lToeTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lToeTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lWristTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lWristTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="lWristTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="linnerShoulderTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="linnerShoulderTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="linnerShoulderTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="neckTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="pelvisTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rAnkleTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rAnkleTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rAnkleTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rElbowTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rHipTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rKneeTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rShoulderTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rToeTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rToeTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rWristTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rWristTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rWristTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rinnerShoulderTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rinnerShoulderTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="rinnerShoulderTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoTransX">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoTransY">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    <link name="torsoTransZ">
+      <inertial>
+	<mass value="1."/>
+	<inertia ixx="1." ixy="0." ixz="0." iyy="1." iyz="0." izz="1."/>
+      </inertial>
+    </link>
+
+    
+    <joint name="baseRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseTransZ"/>
+      <child link="baseRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="baseRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseRotX"/>
+      <child link="baseRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="baseRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseRotY"/>
+      <child link="baseRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="baseTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="base"/>
+      <child link="baseTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="30.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="baseTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseTransX"/>
+      <child link="baseTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="30.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="baseTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseTransY"/>
+      <child link="baseTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="30.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="headTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="neckRotZ"/>
+      <child link="headTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="headTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="headTransY"/>
+      <child link="headTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="headRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="headTransZ"/>
+      <child link="headRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="headRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="headRotX"/>
+      <child link="headRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="headRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="headRotY"/>
+      <child link="headRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="lAnkleTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lKneeRotZ"/>
+      <child link="lAnkleTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lAnkleTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleTransX"/>
+      <child link="lAnkleTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lAnkleTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleTransY"/>
+      <child link="lAnkleTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lAnkleRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleTransZ"/>
+      <child link="lAnkleRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lAnkleRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleRotX"/>
+      <child link="lAnkleRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lAnkleRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleRotY"/>
+      <child link="lAnkleRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+
+        <joint name="lElbowTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lShoulderRotZ"/>
+      <child link="lElbowTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lElbowRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lElbowTransX"/>
+      <child link="lElbowRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lElbowRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lElbowRotX"/>
+      <child link="lElbowRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lElbowRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lElbowRotY"/>
+      <child link="lElbowRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="lHipTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseRotZ"/>
+      <child link="lHipTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lHipRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lHipTransX"/>
+      <child link="lHipRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lHipRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lHipRotX"/>
+      <child link="lHipRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lHipRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lHipRotY"/>
+      <child link="lHipRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lKneeTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lHipRotZ"/>
+      <child link="lKneeTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lKneeRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lKneeTransZ"/>
+      <child link="lKneeRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lKneeRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lKneeRotX"/>
+      <child link="lKneeRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lKneeRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lKneeRotY"/>
+      <child link="lKneeRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lShoulderTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderRotZ"/>
+      <child link="lShoulderTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lShoulderRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lShoulderTransX"/>
+      <child link="lShoulderRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lShoulderRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lShoulderRotX"/>
+      <child link="lShoulderRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lShoulderRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lShoulderRotY"/>
+      <child link="lShoulderRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lToeTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lAnkleRotZ"/>
+      <child link="lToeTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lToeTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lToeTransY"/>
+      <child link="lToeTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lToeRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lToeTransZ"/>
+      <child link="lToeRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lToeRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lToeRotX"/>
+      <child link="lToeRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lToeRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lToeRotY"/>
+      <child link="lToeRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="lWristTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lElbowRotZ"/>
+      <child link="lWristTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lWristTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lWristTransX"/>
+      <child link="lWristTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lWristTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lWristTransY"/>
+      <child link="lWristTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="lWristRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lWristTransZ"/>
+      <child link="lWristRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lWristRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lWristRotX"/>
+      <child link="lWristRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="lWristRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="lWristRotY"/>
+      <child link="lWristRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="linnerShoulderTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoRotZ"/>
+      <child link="linnerShoulderTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="linnerShoulderTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderTransX"/>
+      <child link="linnerShoulderTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="linnerShoulderTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderTransY"/>
+      <child link="linnerShoulderTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="linnerShoulderRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderTransZ"/>
+      <child link="linnerShoulderRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="linnerShoulderRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderRotX"/>
+      <child link="linnerShoulderRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="linnerShoulderRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="linnerShoulderRotY"/>
+      <child link="linnerShoulderRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="neckTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoRotZ"/>
+      <child link="neckTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="neckRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="neckTransZ"/>
+      <child link="neckRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="neckRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="neckRotX"/>
+      <child link="neckRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="neckRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="neckRotY"/>
+      <child link="neckRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="pelvisTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseRotZ"/>
+      <child link="pelvisTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="pelvisRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="pelvisTransZ"/>
+      <child link="pelvisRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="pelvisRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="pelvisRotX"/>
+      <child link="pelvisRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="pelvisRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="pelvisRotY"/>
+      <child link="pelvisRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rAnkleTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rKneeRotZ"/>
+      <child link="rAnkleTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rAnkleTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleTransX"/>
+      <child link="rAnkleTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rAnkleTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleTransY"/>
+      <child link="rAnkleTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rAnkleRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleTransZ"/>
+      <child link="rAnkleRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rAnkleRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleRotX"/>
+      <child link="rAnkleRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rAnkleRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleRotY"/>
+      <child link="rAnkleRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rElbowTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rShoulderRotZ"/>
+      <child link="rElbowTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rElbowRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rElbowTransX"/>
+      <child link="rElbowRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rElbowRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rElbowRotX"/>
+      <child link="rElbowRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rElbowRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rElbowRotY"/>
+      <child link="rElbowRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rHipTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="baseRotZ"/>
+      <child link="rHipTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rHipRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rHipTransX"/>
+      <child link="rHipRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rHipRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rHipRotX"/>
+      <child link="rHipRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rHipRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rHipRotY"/>
+      <child link="rHipRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+
+    <joint name="rKneeTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rHipRotZ"/>
+      <child link="rKneeTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rKneeRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rKneeTransZ"/>
+      <child link="rKneeRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rKneeRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rKneeRotX"/>
+      <child link="rKneeRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rKneeRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rKneeRotY"/>
+      <child link="rKneeRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rShoulderTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderRotZ"/>
+      <child link="rShoulderTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rShoulderRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rShoulderTransX"/>
+      <child link="rShoulderRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rShoulderRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rShoulderRotX"/>
+      <child link="rShoulderRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rShoulderRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rShoulderRotY"/>
+      <child link="rShoulderRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rToeTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rAnkleRotZ"/>
+      <child link="rToeTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rToeTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rToeTransY"/>
+      <child link="rToeTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rToeRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rToeTransZ"/>
+      <child link="rToeRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rToeRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rToeRotX"/>
+      <child link="rToeRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rToeRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rToeRotY"/>
+      <child link="rToeRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rWristTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rElbowRotZ"/>
+      <child link="rWristTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rWristTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rWristTransX"/>
+      <child link="rWristTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rWristTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rWristTransY"/>
+      <child link="rWristTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rWristRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rWristTransZ"/>
+      <child link="rWristRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rWristRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rWristRotX"/>
+      <child link="rWristRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rWristRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rWristRotY"/>
+      <child link="rWristRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="rinnerShoulderTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoRotZ"/>
+      <child link="rinnerShoulderTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rinnerShoulderTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderTransX"/>
+      <child link="rinnerShoulderTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rinnerShoulderTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderTransY"/>
+      <child link="rinnerShoulderTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="rinnerShoulderRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderTransZ"/>
+      <child link="rinnerShoulderRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rinnerShoulderRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderRotX"/>
+      <child link="rinnerShoulderRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="rinnerShoulderRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="rinnerShoulderRotY"/>
+      <child link="rinnerShoulderRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+        <joint name="torsoTransX" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="pelvisRotZ"/>
+      <child link="torsoTransX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="torsoTransY" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoTransX"/>
+      <child link="torsoTransY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="torsoTransZ" type="prismatic">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoTransY"/>
+      <child link="torsoTransZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.0" effort="0" velocity="0"/>
+    </joint>
+    
+    <joint name="torsoRotX" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoTransZ"/>
+      <child link="torsoRotX"/>
+      <axis xyz="1.0 0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="torsoRotY" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoRotX"/>
+      <child link="torsoRotY"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="torsoRotZ" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="torsoRotY"/>
+      <child link="torsoRotZ"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+    </joint>
+
+  </robot>
