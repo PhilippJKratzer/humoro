@@ -12,3 +12,4 @@ python -m pip install -r requirements.txt
 ```bash
 python examples/play_traj.py datasets/examples/full_body_example.hdf5  # playback example motion data
 ```
+![Pybullet Viewer](doc/screenshots/pybullet1.png?raw=true "Pybullet Viewer")
