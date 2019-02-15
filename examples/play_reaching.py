@@ -29,7 +29,7 @@ def main():
     playback_idx = 0
     pause = 120  # pause for 1 sec between reaching motions
     for seg in segments:
-        if seg[2] == "reaching" or seg[2] == "reachingL" or seg[2] == "reachingR":
+        if seg[2].decode() == "reachingR":
             rtraj = traj.subTraj(int(seg[0]), int(seg[1]))
             rtraj.startframe = playback_idx  # change startframe for playback
             trajectories_reaching.append(rtraj)
@@ -42,6 +42,7 @@ def main():
     p.spawnHuman("Human1", upper_body=True)
 
     # add all reaching trajectories to playback list
+
     for traj in trajectories_reaching:
         p.addPlaybackTraj(traj, "Human1")
 
