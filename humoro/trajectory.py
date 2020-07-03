@@ -31,8 +31,8 @@ class Trajectory(object):
         dset = h5file.create_dataset('data', data=self.data)
         dset.attrs['description'] = self.description
         dset.attrs['startframe'] = self.startframe
-        keys_fixed, values_fixed = self.data_fixed.keys(), self.data_fixed.values()
-        if self.data_fixed is not None:
+        keys_fixed, values_fixed = list(self.data_fixed.keys()), list(self.data_fixed.values())
+        if len(keys_fixed) > 0:
             dset.attrs['keys_fixed'] = keys_fixed
             dset.attrs['values_fixed'] = values_fixed
         h5file.close()
@@ -48,9 +48,15 @@ class Trajectory(object):
         dset = h5file['data']
         self.data = dset[:]
         self.description = dset.attrs['description']
+        if type(self.description[0]) == np.bytes_:
+            self.description = [x.decode('utf-8') for x in self.description]
+
         self.startframe = dset.attrs['startframe']
         if 'keys_fixed' in dset.attrs:
-            self.data_fixed = dict(zip(dset.attrs['keys_fixed'], dset.attrs['values_fixed']))
+            keys = dset.attrs['keys_fixed']
+            if type(keys[0]) == np.bytes_:
+                keys = [x.decode('utf-8') for x in keys]
+            self.data_fixed = dict(zip(keys, dset.attrs['values_fixed']))
         else:
             self.data_fixed = {}
         h5file.close()
@@ -78,9 +84,35 @@ class Trajectory(object):
         self._startframe = value
         self.endframe = value + len(self.data)
 
+    @property
+    def description(self):
+        return self._description
+    
+    @description.setter
+    def description(self, value):
+        """ changes the start frame of the trajectory and adapts the endframe (used for playback)
+
+        Keyword arguments:
+        value -- new value of startframe
+        """
+        self._description = value
+        if value is not None:
+            self.inv_ind = {}
+            for idx, dsc in enumerate(value):
+                self.inv_ind[dsc] = idx
+
     def subTraj(self, startframe, endframe):
-        """ Returns a sequence of the trajectory from startframe to endframe 
+        """ Returns a sequence of the trajectory from startframe to endframe
 
         """
-        res = Trajectory(data=copy.deepcopy(self.data[startframe:endframe]), description=copy.deepcopy(self.description), data_fixed=copy.deepcopy(self.data_fixed), startframe=startframe)
+        res = Trajectory(data=copy.deepcopy(self.data[startframe:endframe]), description=copy.deepcopy(self.description), data_fixed=copy.deepcopy(self.data_fixed), startframe=self.startframe + startframe)
         return res
+
+    def getFrameByNames(self, fid, names):
+        frame = []
+        for n in names:
+            if n in self.description:
+                frame.append(self.data[fid, self.inv_ind[n]])
+            else:
+                frame.append(self.data_fixed[n])
+        return frame
