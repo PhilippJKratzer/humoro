@@ -42,3 +42,4 @@ def autoload_objects(p, filename, scenefile, downsample=False):
         for i in range(len(obj_trajs)):
             util.downsample(obj_trajs[i])
     p.addPlaybackTrajObjList(obj_trajs, obj_names)
+    return obj_trajs, obj_names
