@@ -1,4 +1,5 @@
-import pybullet as p
+import pybullet_utils.bullet_client as bc
+import pybullet
 import os
 import time
 import numpy as np
@@ -13,7 +14,8 @@ class Player:
         Keyword arguments:
         fps -- frames per second of the trajectories (default 120)
         """
-        p.connect(p.GUI)
+        self.p = bc.BulletClient(connection_mode=pybullet.GUI)
+        #p.connect(p.GUI)
         #p.setGravity(0,0,-100)
 
         self._humans = {}
@@ -28,21 +30,21 @@ class Player:
         self.gaze_trajs = []
         self.trans_world = np.array([0., 0., 0.])  # this can be used to translate the world
 
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 0)
-        self.plane = p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/plane.urdf", basePosition=[0, 0, 0]+self.trans_world)
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 1)
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 0)
+        self.plane = self.p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/plane.urdf", basePosition=[0, 0, 0]+self.trans_world)
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 1)
 
 
     def spawnObject(self, name, meshfile=None, color=[.8, .8, .8, 1.]):
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 0)
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 0)
         if meshfile is None:
-            visualShapeId = p.createVisualShape(shapeType=p.GEOM_SPHERE, rgbaColor=color, specularColor=[1, 1, 1], radius=0.02)
+            visualShapeId = self.p.createVisualShape(shapeType=self.p.GEOM_SPHERE, rgbaColor=color, specularColor=[1, 1, 1], radius=0.02)
         else:
-            visualShapeId = p.createVisualShape(shapeType=p.GEOM_MESH, fileName=meshfile, rgbaColor=color, specularColor=[1, 1, 1])
-        cuid = -1  # p.createCollisionShape(p.GEOM_BOX, halfExtents = [1, 1, 1])
-        bodyid = p.createMultiBody(baseMass=1, baseCollisionShapeIndex=cuid, baseInertialFramePosition=[0, 0, 0], baseVisualShapeIndex=visualShapeId, basePosition=[0, 1, 0], useMaximalCoordinates=True)
+            visualShapeId = self.p.createVisualShape(shapeType=self.p.GEOM_MESH, fileName=meshfile, rgbaColor=color, specularColor=[1, 1, 1])
+        cuid = -1  # self.p.createCollisionShape(self.p.GEOM_BOX, halfExtents = [1, 1, 1])
+        bodyid = self.p.createMultiBody(baseMass=1, baseCollisionShapeIndex=cuid, baseInertialFramePosition=[0, 0, 0], baseVisualShapeIndex=visualShapeId, basePosition=[0, 1, 0], useMaximalCoordinates=True)
         self._objects[name] = bodyid
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 1)
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 1)
         
     def spawnHuman(self, name="human1", urdf=None, upper_body=False, color=None, hide=True):
         """ spawns a human
@@ -54,23 +56,23 @@ class Player:
         color -- color of the human in rgba (default None)
         hide -- hide the human if no trajectory for frame is assigned (default True)
         """
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 0)  # disable rendering during loading makes it much faster
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 0)  # disable rendering during loading makes it much faster
         if urdf is None:
             zpos = 0
             if hide:
                 zpos = -10.  # Todo: cleaner way to hide humans?
             if upper_body is True:
-                self._humans[name] = p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/human_upper_body.urdf", basePosition=[0, 0, zpos])
+                self._humans[name] = self.p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/human_upper_body.urdf", basePosition=[0, 0, zpos])
             else:
-                self._humans[name] = p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/human.urdf", basePosition=[0, 0, zpos])
+                self._humans[name] = self.p.loadURDF(os.path.dirname(os.path.realpath(__file__)) + "/data/human.urdf", basePosition=[0, 0, zpos])
         else:
-            self._humans[name] = p.loadURDF(urdf, basePosition=[0, 0, -10])
+            self._humans[name] = self.p.loadURDF(urdf, basePosition=[0, 0, -10])
 
-        self.inv_index = create_inv_index(self._humans[name], p)
+        self.inv_index = create_inv_index(self._humans[name], self.p)
         if color is not None:
             self.change_color(self._humans[name], color)
         self._hidehumans[name] = hide
-        p.configureDebugVisualizer(p.COV_ENABLE_RENDERING, 1)
+        self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 1)
         return self._humans[name]
 
     def change_color(self, human, color):
@@ -80,8 +82,8 @@ class Player:
         human -- name of the human
         color -- new color of human in rgba
         """
-        for j in range(p.getNumJoints(human)):
-            p.changeVisualShape(human, j, rgbaColor=color)
+        for j in range(self.p.getNumJoints(human)):
+            self.p.changeVisualShape(human, j, rgbaColor=color)
 
     def addPlaybackTraj(self, traj, human="human1"):
         """ adds a human trajectory to the player for playback
@@ -108,6 +110,14 @@ class Player:
             self._start_playback = traj.startframe
         if self._end_playback is None or self._end_playback < traj.endframe:
             self._end_playback = traj.endframe
+
+    def addPlaybackTrajGaze(self, traj):
+        """ adds an trajectory to the player for playback of gaze
+
+        Keyword arguments:
+        traj -- playback trajectory
+        """
+        self.gaze_trajs.append(traj)
             
     def removePlaybackTrajs(self):
         self._playbackTrajs = []
@@ -136,7 +146,7 @@ class Player:
         start_time = time.time()
         if startframe == -1:
             startframe = self._start_playback
-        while (p.isConnected()):
+        while (self.p.isConnected()):
             frameReal = (time.time() - start_time) * self._fps
             frame =  startframe + int(frameReal)
             if duration != -1 and frame > duration + startframe:
@@ -152,7 +162,7 @@ class Player:
 
     def showFrame(self, frame):
         visibleHumans = []
-        #p.stepSimulation()
+        #self.p.stepSimulation()
 
         # playback human trajectories
         for human, traj in self._playbackTrajs:
@@ -175,22 +185,22 @@ class Player:
                         idxes.append(idx)
                         values.append([traj.data[trajframe, i]])
                         
-            p.resetJointStatesMultiDof(self._humans[human], idxes, values)
+            self.p.resetJointStatesMultiDof(self._humans[human], idxes, values)
         # hide not visible humans
         for human in self._humans:
             if not self._hidehumans[human]:
                 continue
             if human in visibleHumans:
-                p.resetBasePositionAndOrientation(self._humans[human], self.trans_world, [0, 0, 0, 1])
+                self.p.resetBasePositionAndOrientation(self._humans[human], self.trans_world, [0, 0, 0, 1])
             else:
-                p.resetBasePositionAndOrientation(self._humans[human], [0, 0, -10], [0, 0, 0, 1])  # TODO: is there a cleaner way to hide humans?
+                self.p.resetBasePositionAndOrientation(self._humans[human], [0, 0, -10], [0, 0, 0, 1])  # TODO: is there a cleaner way to hide humans?
 
         # playback object trajectories
         for obj, traj in self._playbackTrajsObj:
             if frame >= traj.startframe and frame < traj.endframe:
                 trajframe = int(frame - traj.startframe)
                 if obj in self._objects:
-                    p.resetBasePositionAndOrientation(self._objects[obj], traj.data[trajframe][0:3]+self.trans_world, traj.data[trajframe][3:7])
+                    self.p.resetBasePositionAndOrientation(self._objects[obj], traj.data[trajframe][0:3]+self.trans_world, traj.data[trajframe][3:7])
                 if obj == "goggles":  # playback gaze trajectory
                     for gaze_traj in self.gaze_trajs:
                         if frame >= gaze_traj.startframe and frame < gaze_traj.endframe:
@@ -203,6 +213,6 @@ class Player:
                                     endpos *= -1  # mirror gaze point if wrong direction
                                 endpos = np.dot(rotmat, endpos)  # gaze calibration
 
-                                p.addUserDebugLine(traj.data[trajframe][0:3]+self.trans_world, endpos+self.trans_world, lifeTime=0.05, lineWidth=4, lineColorRGB=[0., 0., 0.5])  # TODO: this uses a Debug Line for displaying the gaze ray, is there a better option?
+                                self.p.addUserDebugLine(traj.data[trajframe][0:3]+self.trans_world, endpos+self.trans_world, lifeTime=0.05, lineWidth=4, lineColorRGB=[0., 0., 0.5])  # TODO: this uses a Debug Line for displaying the gaze ray, is there a better option?
 
         
