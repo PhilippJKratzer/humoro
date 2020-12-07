@@ -1,4 +1,5 @@
 numpy
 pybullet
 h5py
+scipy
 PyQt5  # or install via apt
