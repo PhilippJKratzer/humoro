@@ -475,6 +475,15 @@ def rotmatAxis(angle, axis):
                       [uz * ux * (1 - c) - uy * s, uz * uy * (1 - c) + ux * s, c + uz * uz * (1 - c)]])
     return res
 
+def points2quat(v1, v2):
+    """ computes a quaternion from the rotation between two vectors """
+    q = np.zeros(4)
+    a = np.cross(v1, v2);
+    q[:3] = a;
+    q[3] = np.sqrt((np.linalg.norm(v1) ** 2) * (np.linalg.norm(v2) ** 2)) + np.dot(v1, v2);
+    return q
+
+
 def quat2expmap(q):
   """
   Converts a quaternion to an exponential map

@@ -28,6 +28,7 @@ class Player:
         self._start_playback = None
         self._end_playback = None
         self.gaze_trajs = []
+        self.gaze_objs = []
         self.trans_world = np.array([0., 0., 0.])  # this can be used to translate the world
 
         self.p.configureDebugVisualizer(self.p.COV_ENABLE_RENDERING, 0)
@@ -118,6 +119,9 @@ class Player:
         traj -- playback trajectory
         """
         self.gaze_trajs.append(traj)
+        gazeshape = self.p.createVisualShape(shapeType=self.p.GEOM_CYLINDER, rgbaColor=[0., 0., 1., 1.], specularColor=[1, 1, 1], radius=0.01, length=10.)
+        self.gaze_objs.append(self.p.createMultiBody(baseMass=0, baseInertialFramePosition=[0, 0, 0], baseVisualShapeIndex=gazeshape, basePosition=[0, 0, 0], useMaximalCoordinates=True))
+
             
     def removePlaybackTrajs(self):
         self._playbackTrajs = []
@@ -202,7 +206,8 @@ class Player:
                 if obj in self._objects:
                     self.p.resetBasePositionAndOrientation(self._objects[obj], traj.data[trajframe][0:3]+self.trans_world, traj.data[trajframe][3:7])
                 if obj == "goggles":  # playback gaze trajectory
-                    for gaze_traj in self.gaze_trajs:
+                    for gi in range(len(self.gaze_trajs)):
+                        gaze_traj = self.gaze_trajs[gi]
                         if frame >= gaze_traj.startframe and frame < gaze_traj.endframe:
                             trajframegaze = int(frame - gaze_traj.startframe)
                             if gaze_traj.data[trajframegaze, -1] > 0.:
@@ -212,7 +217,6 @@ class Player:
                                 if endpos[2] < 0:
                                     endpos *= -1  # mirror gaze point if wrong direction
                                 endpos = np.dot(rotmat, endpos)  # gaze calibration
-
-                                self.p.addUserDebugLine(traj.data[trajframe][0:3]+self.trans_world, endpos+self.trans_world, lifeTime=0.05, lineWidth=4, lineColorRGB=[0., 0., 0.5])  # TODO: this uses a Debug Line for displaying the gaze ray, is there a better option?
-
-        
+                                direction = traj.data[trajframe][0:3]+self.trans_world-endpos
+                                direction /= np.linalg.norm(direction)
+                                self.p.resetBasePositionAndOrientation(self.gaze_objs[gi], traj.data[trajframe][0:3]+self.trans_world - direction*5., mu.points2quat([0.,0.,1.], direction))

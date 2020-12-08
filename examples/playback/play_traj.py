@@ -33,7 +33,7 @@ def main():
         load_scenes.autoload_objects(p, args.obj, args.scene)
 
     if args.gaze != None:
-        p.gaze_trajs.append(load_gaze(args.gaze))
+        p.addPlaybackTrajGaze(load_gaze(args.gaze))
 
 
     p.spawnHuman("Human1")
