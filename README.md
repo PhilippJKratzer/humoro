@@ -9,3 +9,5 @@ python3 -m pip install -r requirements.txt
 
 ## Example
 Check out our [getting started notebook](https://github.com/PhilippJKratzer/humoro/blob/master/examples/getting_started.ipynb) that explains how to use this repository with our [mogaze dataset](https://humans-to-robots-motion.github.io/mogaze/).
+
+![Mogaze Dataset](https://raw.githubusercontent.com/humans-to-robots-motion/mogaze/master/images/im2.png "Mogaze Dataset")
