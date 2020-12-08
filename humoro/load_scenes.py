@@ -1,10 +1,6 @@
 import os
 import sys
 
-_path_file = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(_path_file, ".."))
-
-
 from humoro.objectParser import parseHDF5
 import humoro.utility as util
 
@@ -29,7 +25,7 @@ def spawn_from_file(p, obj_ids, filename_xml):
                 pass
                 #p.spawnObject(name, meshfile=None, color=[0,0,1,1])
             else:
-                p.spawnObject(name, meshfile=_path_file + "/../" + meshfile, color=color)
+                p.spawnObject(name, meshfile=os.path.join(os.path.dirname(os.path.dirname(filename_xml)), meshfile), color=color)
         else:
             print ("tag " + child.tag + " not understood")
     return obj_names
